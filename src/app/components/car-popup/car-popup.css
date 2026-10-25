@@ -1,0 +1,120 @@
+/* .overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: auto;
+}
+.popup img { width: 100%; } */
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(40, 50, 110, 0.75), rgba(15, 20, 55, 0.92));
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  animation: fade 0.3s;
+}
+
+.popup {
+  position: relative;
+  width: 90%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-x: hidden;               /* no horizontal scrollbar */
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-bottom: 25px;
+  background: linear-gradient(160deg, #fffaf0, #f3e7cf);
+  border: 2px solid #c9a96a;
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(201, 169, 106, 0.45);
+  animation: zoom 0.4s;
+}
+
+.popup img {
+  display: block;                   /* removes the small gap under the image */
+  width: 100%;                      /* exactly the width of the pop-up */
+  height: auto;
+  padding: 0;                       /* this was making the image too wide */
+  box-sizing: border-box;
+  background: #ffffff;
+  border-bottom: 3px solid #c9a96a;
+}
+
+.popup h2 {
+  margin: 20px 25px 10px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  color: #1f2a5c;                   /* royal blue */
+}
+
+.popup p {
+  margin: 10px 25px;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  color: #4a4a5a;
+}
+
+.popup .info {
+  font-weight: 600;
+  color: #8a6a1f;                   /* dark gold */
+}
+
+/* ---------- X button (top right corner) ---------- */
+.x-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  color: white;
+  background: #1f2a5c;
+  border: 2px solid #c9a96a;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  z-index: 5;
+}
+.x-btn:hover {
+  background: #c9a96a;
+  transform: rotate(90deg);         /* the X turns when hovered */
+}
+
+/* ---------- Close button (bottom) ---------- */
+.close-btn {
+  margin: 10px 25px 0;
+  padding: 10px 35px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(135deg, #1f2a5c, #3a4a9c);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(31, 42, 92, 0.4);
+}
+
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoom { from { transform: scale(0.85); } to { transform: scale(1); } }

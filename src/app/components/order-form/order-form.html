@@ -1,0 +1,28 @@
+<div class="order">
+  <h2>Book a visit</h2>
+
+  <label>Name</label>
+  <input type="text" #name>
+
+  <label>Phone</label>
+  <input type="text" #phone>
+
+  <label>Car you want to see</label>
+  <select #car>
+    @for(auto of autos; track auto.id){
+      <option>{{auto.brand}} {{auto.model}}</option>
+    }
+  </select>
+
+  <label>Date</label>
+  <input type="date" #date>
+
+  <label>Time</label>
+  <input type="time" #time>
+
+  <button (click)="book(name.value, phone.value, car.value, date.value, time.value)">
+    Book my visit
+  </button>
+
+  <p>{{message}}</p>
+</div>

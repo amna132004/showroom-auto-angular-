@@ -1,0 +1,12 @@
+<div class="overlay" (click)="close()">
+  <div class="popup" (click)="$event.stopPropagation()">
+
+    <button class="x-btn" (click)="close()">✕</button>
+
+    <img [src]="`images/${auto.photo}`">
+    <h2>{{auto.brand}} {{auto.model}}</h2>
+    <p>{{auto.description}}</p>
+    <p class="info">Power : {{auto.power}} | Price : {{auto.price}} DNT</p>
+    <button class="close-btn" (click)="close()">Close</button>
+  </div>
+</div>

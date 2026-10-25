@@ -1,0 +1,88 @@
+<!-- <div class="container">
+    <label for="">Brand</label>
+    <input type="text" #brand
+    (input)="selectAutos(brand.value)">
+    
+    <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+<label>Max price</label>
+<select #price (change)="filterByPrice(price.value)">
+    <option value="0">All</option>
+    <option value="200">up to 200 DNT</option>
+    <option value="300">up to 300 DNT</option>
+    <option value="400">up to 400 DNT</option>
+    <option value="800">up to 800 DNT</option>
+</select>
+
+</div>
+
+<div class="cars-container">
+    @for(auto of selectedAutos; track auto.id){
+
+    <div class="auto-card">
+       <img [src]="`images/${auto.photo}`">
+            <div class="details">
+                <h3>{{auto.brand}} {{auto.model}}</h3>
+                <p>
+                    Power : {{auto.power}}<br>
+                    Price : {{auto.price}} DNT<br>
+                    Only {{auto.availability}} units in stock.
+                </p>
+            </div>
+            <div class="see_more">
+                <button (click)="selectCar(auto)">See more...</button>
+            </div>
+    </div>}
+</div> -->
+
+
+<div class="container">
+  <label>Search</label>
+  <input type="text"
+         placeholder="Brand or model..."
+         [value]="searchText"
+         (input)="onSearch($any($event.target).value)">
+  <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+
+  <label>Max price</label>
+  <select [value]="maxPrice" (change)="onPrice($any($event.target).value)">
+    <option value="0">All</option>
+    <option value="200">up to 200 DNT</option>
+    <option value="300">up to 300 DNT</option>
+    <option value="400">up to 400 DNT</option>
+    <option value="800">up to 800 DNT</option>
+  </select>
+
+  <label>Sort</label>
+  <select [value]="sortOrder" (change)="onSort($any($event.target).value)">
+    <option value="none">Default</option>
+    <option value="asc">Price: low to high</option>
+    <option value="desc">Price: high to low</option>
+  </select>
+
+  <button class="reset-btn" (click)="reset()">Reset</button>
+</div>
+
+<p class="count">{{selectedAutos.length}} car(s) found</p>
+
+@if(selectedAutos.length === 0){
+  <p class="empty">No car matches your search.</p>
+}
+
+<div class="cars-container">
+    @for(auto of selectedAutos; track auto.id){
+
+    <div class="auto-card">
+       <img [src]="`images/${auto.photo}`">
+            <div class="details">
+                <h3>{{auto.brand}} {{auto.model}}</h3>
+                <p>
+                    Power : {{auto.power}}<br>
+                    Price : {{auto.price}} DNT<br>
+                    Only {{auto.availability}} units in stock.
+                </p>
+            </div>
+            <div class="see_more">
+                <button (click)="selectCar(auto)">See more...</button>
+            </div>
+    </div>}
+</div>

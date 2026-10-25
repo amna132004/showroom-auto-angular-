@@ -1,0 +1,220 @@
+/* .container{
+    margin: 30px;
+    padding: 5px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(186, 158, 158);
+    border-radius: 20px;
+}
+input{
+    all:unset;
+    font-weight: bold;
+}
+fa-icon{
+    cursor: pointer;
+}
+label{
+    font-weight: bold;
+    color: rgb(147, 88, 88);
+}
+
+.cars-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+img {
+  width: 200px;
+}
+
+.auto-card{
+    margin: 20px;
+    width: 20%;
+    padding: 10px;
+    border: 2px solid #827e7e;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px #888888;
+    height: fit-content;
+}
+
+button {
+    all:unset;
+    font-weight:bold;
+    color:blue;
+    cursor:pointer;
+  
+} */
+
+
+/* ---------- Search + filter bar ---------- */
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 950px;
+  margin: 40px auto 20px;
+  padding: 10px 25px;
+  background: linear-gradient(160deg, #fffaf0, #f3e7cf);   /* ivory */
+  border: 2px solid #c9a96a;                                /* gold */
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(201, 169, 106, 0.3);
+}
+
+label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8a6a1f;                                           /* dark gold */
+}
+
+input {
+  all: unset;
+  flex: 1;
+  min-width: 120px;
+  padding: 6px 4px;
+  font-weight: bold;
+  color: #1f2a5c;                                           /* royal blue */
+  border-bottom: 1px solid #c9a96a;
+}
+
+fa-icon {
+  color: #1f2a5c;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+fa-icon:hover {
+  color: #c9a96a;
+  transform: scale(1.2);
+}
+
+select {
+  padding: 8px 14px;
+  font-family: inherit;
+  color: #1f2a5c;
+  background: white;
+  border: 1px solid #c9a96a;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+}
+select:focus {
+  box-shadow: 0 0 10px rgba(201, 169, 106, 0.6);
+}
+
+/* ---------- Grid of cars ---------- */
+.cars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+  padding: 30px 5%;
+}
+
+/* ---------- Car card ---------- */
+.auto-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(160deg, #fffaf0, #f3e7cf);
+  border: 2px solid #c9a96a;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(31, 42, 92, 0.2);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.auto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(31, 42, 92, 0.35), 0 0 25px rgba(201, 169, 106, 0.5);
+}
+
+/* the car sits on a white panel with a gold base */
+img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: radial-gradient(circle at 50% 40%, #ffffff, #e6e6e6);
+  border-bottom: 3px solid #c9a96a;
+}
+
+.details {
+  padding: 18px 20px 5px;
+}
+
+.details h3 {
+  margin: 0 0 10px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  color: #1f2a5c;
+}
+
+.details p {
+  margin: 0;
+  line-height: 1.8;
+  font-size: 0.85rem;
+  color: #4a4a5a;
+}
+
+.see_more {
+  margin-top: auto;                 /* keeps the button at the bottom of every card */
+  padding: 15px 20px 20px;
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(135deg, #1f2a5c, #3a4a9c);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(31, 42, 92, 0.4);
+}
+/* small reset button */
+.reset-btn {
+  width: auto;
+  padding: 8px 20px;
+  font-size: 0.7rem;
+  background: transparent;
+  color: #1f2a5c;
+  border: 1px solid #c9a96a;
+}
+.reset-btn:hover {
+  background: #c9a96a;
+  color: white;
+}
+
+/* results counter and empty message */
+.count {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8a6a1f;
+}
+.empty {
+  margin: 30px 0;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  color: #1f2a5c;
+}
+

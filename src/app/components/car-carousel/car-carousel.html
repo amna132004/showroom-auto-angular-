@@ -1,0 +1,8 @@
+<div class="carousel">
+  @for(auto of autos; track auto.id; let i = $index){
+    <div class="slide" [class.active]="i === current()">
+      <img [src]="`images/${auto.photo}`" [alt]="auto.model">
+      <h3>{{auto.brand}} {{auto.model}}</h3>
+    </div>
+  }
+</div>

@@ -1,0 +1,35 @@
+/* .line {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  width: 2px;
+  height: 100vh;
+  background: grey;
+  z-index: 50;
+}
+.car {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  pointer-events: none;
+} */
+
+
+.line {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(transparent, #c9a96a 15%, #c9a96a 85%, transparent);
+  z-index: 50;
+}
+
+.car {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;                                      /* bigger car */
+  pointer-events: none;
+}
